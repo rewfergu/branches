@@ -19,10 +19,11 @@ void setup() {
   frameRate(4);
   size(canvasWidth, canvasHeight);
   //size(canvasWidth, canvasHeight, PDF, "output.pdf");
-  int rowCount = 0;
+  colorMode(HSB, 100);
+  //int rowCount = 0;
 
   smooth();
-  fill(#594a42);
+  fill(6, 26, 34);
   rect(0,0,width,height);
   // get tiles and branches
   tiles[0] = new Tile("one", false, false, true, true);
@@ -72,11 +73,12 @@ void setup() {
       int tileNumber = int(random(branchSet.length));
       int x = (j*gridSize);
       int y = (i*gridSize);
+      color bgColor = color(floor(random(17, 45)), 20, 57);
       
       tileList[currentTile] = branchSet[tileNumber];
       println("We picked tile " + branchSet[tileNumber].id + " at random.");
       
-      tileList[currentTile].display(x, y);
+      tileList[currentTile].display(bgColor, x, y);
       
       currentTile++;
       
