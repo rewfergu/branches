@@ -1,5 +1,5 @@
 class Tile {
-  PShape s = loadShape("circles3.svg");
+  PShape s = loadShape("circles.svg");
   PShape tile, bgCircle, pathGroup;
   boolean top, right, bottom, left;
   String id;
