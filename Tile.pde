@@ -12,7 +12,6 @@ class Tile {
   boolean leftVal) {
       id = graphic;
       tile = s.getChild(id);
-      print(tile.getChildCount());
       bgCircle = tile.getChild(0);
       pathGroup = tile.getChild(1);
       top = topVal;

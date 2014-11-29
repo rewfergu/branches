@@ -1,12 +1,11 @@
 //import processing.pdf.*;
 
-int canvasWidth = 375;
-int canvasHeight = 375;
+int canvasWidth = 750;
+int canvasHeight = 750;
 int gridSize = 75;
 int cols = canvasWidth / gridSize;
 int rows = canvasHeight / gridSize;
-int xPos = 0;
-int yPos = 0;
+
 
 Tile[] tiles = new Tile[13];
 boolean[] branches = { false, false, false, false };
@@ -20,7 +19,6 @@ void setup() {
   size(canvasWidth, canvasHeight);
   //size(canvasWidth, canvasHeight, PDF, "output.pdf");
   colorMode(HSB, 100);
-  //int rowCount = 0;
 
   smooth();
   fill(6, 26, 34);
@@ -47,7 +45,8 @@ void setup() {
       
       if (i != 0) {
         // look up and assign value to branches array
-        branches[2] = tileList[currentTile-rows].bottom;
+        println(currentTile-rows);
+        branches[2] = tileList[currentTile-cols].bottom;
         println("Look up: " + branches[2]);
       } else {
         println("We can't look up");
@@ -86,6 +85,6 @@ void setup() {
       branchSet = new Tile[0];
     }
   }
-  //saveFrame("output.png");
+  saveFrame("output.png");
 }
 
